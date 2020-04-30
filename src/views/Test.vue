@@ -1,15 +1,22 @@
 <template>
   <div class="about">
-    <h1>This is an test page</h1>
-    <test></test>
+    <h1>This is an todo list page</h1>
+    <todo/>
+    <transition-test/>
+    <filterTest/>
   </div>
 </template>
 
 <script>
-  import test from "../components/test"
+  import todo from "../components/Todo"
+  import transitionTest from "../components/transitionTest"
+  import filterTest from "../components/filter"
+  import "../components/pluginTest"
   export default {
     components:{
-      test
+      todo,
+      transitionTest,
+      filterTest,
     }
   }
 </script>

@@ -1,8 +1,10 @@
 <template>
     <div>
-        <h1 v-once>加载时间:{{nowTime}}</h1>
-        <button @click="showTime">show time</button>
-        <h1 v-if="isShow">现在时间:{{nowTime}}</h1>
+        A:<input type="text" v-model="A">
+        <br>
+        B:<input type="text" v-model="B">
+        <br>
+        sum: <input type="text" v-model="sum">
     </div>
 </template>
 
@@ -11,14 +13,13 @@ export default{
     name:"test",
     data(){
         return {
-            nowTime:new Date().toLocaleString(),
-            isShow:false
+            A:0,
+            B:0,
         }
     },
-    methods: {
-        showTime(){
-            this.nowTime=new Date().toLocaleString();
-            this.isShow=!this.isShow;
+    computed: {
+        sum:function(){
+            return parseFloat(this.A) + parseFloat(this.B)
         }
     },
 }
